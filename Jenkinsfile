@@ -1,11 +1,14 @@
 pipeline {
-    agent {
-        stages {
-            stage('build') {
-                steps {
-                    sh 'mvn --version'
-                }
+    agent {label 'slave'}
+      stages {
+
+        stage('checkout'){
+
+            steps {
+                sh 'echo helloworld'
             }
         }
-    }
+      }
+
+
 }
