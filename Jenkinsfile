@@ -8,6 +8,12 @@ pipeline {
             when { expression { IS_PULL_REQUEST_BUILD }}
             steps {
                 sh 'echo helloworld2'
+                sh 'mvn version'
+            }
+        }
+        stage('build'){
+            steps {
+                sh 'mvn version'
             }
         }
       }
